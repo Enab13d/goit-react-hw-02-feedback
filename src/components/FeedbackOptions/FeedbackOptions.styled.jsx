@@ -4,7 +4,7 @@ import { theme } from "constants";
 export const Experience = styled.select`
     height: 44px;
     width: 100%;
-    background-color: ${theme.colors.formWrapperBg};
+    background-color: ${theme.colors.white};
     border: none;
     outline: none;
     overflow: hidden;
@@ -15,18 +15,19 @@ export const Experience = styled.select`
 
 export const Feedback = styled.option`
 width: 60px;
-font-size: 1.2em;
-background-color: ${theme.colors.btnBg};
+font-size: 14px;
+font-weight: 600;
+background-color: ${theme.colors.white};
 padding: 10px 0;
 text-align: center;
 margin-right: 20px;
 display: inline-block;
 cursor: pointer;
-border:rgb(204, 204, 0) solid 1px;
-border-radius: 4px;
-color: ${theme.colors.formText};
+border: 1px solid ${theme.colors.formBorder};
+border-radius: 8px;
+color: ${theme.colors.black};
 &:hover {
-    color: ${theme.colors.black};
-    background-color: ${theme.colors.formText};
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.formBorder};
 }
 `;

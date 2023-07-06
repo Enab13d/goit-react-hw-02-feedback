@@ -32,7 +32,6 @@ export class App extends Component {
           title="Please leave feedback"
           children={
             <FeedbackOptions
-              options={this.state}
               onLeaveFeedback={handleClick}
             ></FeedbackOptions>
           }

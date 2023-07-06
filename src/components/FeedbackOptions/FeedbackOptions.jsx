@@ -1,6 +1,5 @@
 import { Experience, Feedback } from "../FeedbackOptions/FeedbackOptions.styled";
-export const FeedbackOptions = ({options, onLeaveFeedback}) => {
-    const {good, bad, neutral } = options;
+export const FeedbackOptions = ({onLeaveFeedback}) => {
     return (
           <form>
             <Experience name="Experience" onClick={onLeaveFeedback} multiple>
