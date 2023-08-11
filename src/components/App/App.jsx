@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { FeedbackForm } from '../FeedbackForm';
+import { Wrapper } from './App.styled';
 import { FeedbackOptions } from '../FeedbackOptions';
 import { Statistics } from '../Statistics/Statistics';
 import { Section } from '../Section/Section';
@@ -19,7 +19,7 @@ export class App extends Component {
   };
   countTotalFeedback = (good, neutral, bad) =>
     [good, neutral, bad].reduce((acc, e) => acc + e);
-  countPositiveFeedbackPercentage = (good, total) => (good / total) * 100;
+  countPositiveFeedbackPercentage = (good, total) => Math.round((good / total) * 100);
   render() {
     const { handleClick, countTotalFeedback, countPositiveFeedbackPercentage } =
       this;
@@ -27,11 +27,11 @@ export class App extends Component {
     const total = countTotalFeedback(good, neutral, bad);
     const positivePercentage = countPositiveFeedbackPercentage(good, total);
     return (
-      <FeedbackForm>
+      <Wrapper>
         <Section
           title="Please leave feedback"
           children={
-            <FeedbackOptions
+            <FeedbackOptions options={Object.keys(this.state)}
               onLeaveFeedback={handleClick}
             ></FeedbackOptions>
           }
@@ -52,7 +52,7 @@ export class App extends Component {
             )
           }
         />
-      </FeedbackForm>
+      </Wrapper>
     );
   }
 }

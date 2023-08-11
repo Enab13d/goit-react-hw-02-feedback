@@ -3,13 +3,11 @@ import {
   Feedback,
 } from '../FeedbackOptions/FeedbackOptions.styled';
 import PropTypes from 'prop-types';
-export const FeedbackOptions = ({ onLeaveFeedback }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <form>
       <Experience name="Experience" onClick={onLeaveFeedback} multiple>
-        <Feedback value="good">Good</Feedback>
-        <Feedback value="neutral">Neutral</Feedback>
-        <Feedback value="bad">Bad</Feedback>
+        {options.map((option, idx) => <Feedback value={option} key={idx}>{option}</Feedback>)}
       </Experience>
     </form>
   );

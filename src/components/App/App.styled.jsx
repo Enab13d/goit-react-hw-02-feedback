@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "constants";
 
-export const Form = styled.div`
+export const Wrapper = styled.div`
 background-color: ${theme.colors.white};
 width: 400px;
 margin: auto;
